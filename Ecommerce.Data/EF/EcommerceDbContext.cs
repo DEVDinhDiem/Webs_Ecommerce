@@ -70,12 +70,12 @@ namespace Ecommerce.Data.EF
         public DbSet<OrderDetail> OrderDetails { get; set; }
 
         public DbSet<Promotion> Promotions { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
         // table Translations
         //public DbSet<Language> Languages { get; set; }
         //public DbSet<ProductTranslation> ProductTranslations { get; set; }
         //public DbSet<CategoryTranslation> CategoryTranslations { get; set; }
-        //public DbSet<Transaction> Transactions { get; set; }
     }
 
 }
