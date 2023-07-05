@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Data.Migrations
 {
     [DbContext(typeof(EcommerceDbContext))]
-    [Migration("20230705094407_InitialCreateIdentity")]
-    partial class InitialCreateIdentity
+    [Migration("20230705102241_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,7 +84,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "deb86b97-68c1-4a6f-92ba-5427c5262a90",
+                            ConcurrencyStamp = "8cfb4b38-4bec-46be-9013-e695c4e3caf0",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -161,7 +161,7 @@ namespace Ecommerce.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e0f2547c-dae0-4639-9a96-d0c76736412c",
+                            ConcurrencyStamp = "f63ac4e2-3ce5-4f0d-a386-ee09d55f937b",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "dinhdiemdlx@gmail.com",
                             EmailConfirmed = true,
@@ -170,7 +170,7 @@ namespace Ecommerce.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "dinhdiemdlx@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDXv9UJf7f5MiTRA0j+2UtpAVBFF7JJMCy08CgMr2cFc4Y9V0/qYGuNI3QP1I4Nd3Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENHCSAqpxubvbDLx2hHhNpY90lagC17U9yO2jLeO4kKrTPHd+pCyl2QjAjnWPze2Iw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -392,7 +392,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 7, 5, 16, 44, 7, 412, DateTimeKind.Local).AddTicks(4168),
+                            DateCreated = new DateTime(2023, 7, 5, 17, 22, 40, 950, DateTimeKind.Local).AddTicks(4286),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
