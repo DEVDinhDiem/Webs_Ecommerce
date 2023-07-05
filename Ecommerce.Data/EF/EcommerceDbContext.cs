@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ecommerce.Data.Configurations;
 using Ecommerce.Data.Entities;
+using Ecommerce.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 
@@ -37,7 +38,7 @@ namespace Ecommerce.Data.EF
             //modelBuilder.ApplyConfiguration(new TransactionConfiguration());
 
             //Data seeding
-            //modelBuilder.Seed();
+            modelBuilder.Seed();
             //base.OnModelCreating(modelBuilder);
         }
 
