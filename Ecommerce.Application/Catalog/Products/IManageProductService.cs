@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ecommerce.Application.Catalog.Dtos;
-using Ecommerce.Application.Catalog.Products.Dtos;
+using Ecommerce.Application.Catalog.Products.Dtos.Manage;
 
 namespace Ecommerce.Application.Catalog.Products
 {
@@ -12,12 +12,16 @@ namespace Ecommerce.Application.Catalog.Products
     {
         Task<int> Create(ProductCreateRequest request);
 
-        Task<int> Update(ProductEditRequest request);
+        Task<int> Update(ProductUpdateRequest request);
 
         Task<int> Delete(int productId);
 
-        Task<List<ProductViewModel>> GetAll();
+        Task<bool> UpdatePrice(int productId, decimal newPrice);
 
-        Task<PagedViewModel<ProductViewModel>> GetAllPaging(string keyword, int pageIndex, int pageSize);
+        Task<bool> UpdateStock(int productId, int addedQuantity);
+
+        Task AddViewcount(int productId);
+
+        Task<PagedResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request);
     }
 }

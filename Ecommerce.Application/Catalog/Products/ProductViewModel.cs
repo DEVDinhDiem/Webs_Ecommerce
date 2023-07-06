@@ -4,31 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Data.Entities
+namespace Ecommerce.Application.Catalog.Products
 {
-    public class Product
+    public class ProductViewModel
     {
         public int Id { set; get; }
-        //new column
         public string Name { set; get; }
         public string Description { set; get; }
         public string Details { set; get; }
         public string SeoDescription { set; get; }
         public string SeoTitle { set; get; }
-        public string? SeoAlias { set; get; }
         public decimal Price { set; get; }
         public decimal OriginalPrice { set; get; }
         public int Stock { set; get; }
         public int ViewCount { set; get; }
         public DateTime DateCreated { set; get; }
-
-        public List<ProductInCategory> ProductInCategories { get; set; }
-
-        public List<OrderDetail> OrderDetails { get; set; }
-
-        public List<Cart> Carts { get; set; }
-
-        //public List<ProductTranslation> ProductTranslations { get; set; }
-
+        public string? SeoAlias { set; get; }
     }
 }
