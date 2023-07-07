@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ecommerce.Application.Catalog.Dtos;
+using Ecommerce.ViewModels.Catalog.Products.Common;
 
-namespace Ecommerce.Application.Catalog.Products.Dtos.Manage
+namespace Ecommerce.ViewModels.Catalog.Products.Manage
 {
     public class GetProductPagingRequest : PagingRequestBase
     {

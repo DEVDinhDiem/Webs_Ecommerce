@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ecommerce.Application.Catalog.Dtos;
-using Ecommerce.Application.Catalog.Products.Dtos.Public;
+﻿using Ecommerce.ViewModels.Catalog.Products;
+using Ecommerce.ViewModels.Catalog.Products.Common;
+using Ecommerce.ViewModels.Catalog.Products.Public;
 
 namespace Ecommerce.Application.Catalog.Products
 {

@@ -4,6 +4,7 @@ using Ecommerce.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Data.Migrations
 {
     [DbContext(typeof(EcommerceDbContext))]
-    partial class EcommerceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230706100351_addImagetable")]
+    partial class addImagetable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,7 +84,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "6b4174db-1319-4791-82ba-d5a282eee92a",
+                            ConcurrencyStamp = "851a59ae-803b-4f02-a684-3ac714332cca",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -158,7 +161,7 @@ namespace Ecommerce.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c3834df4-c222-452f-8234-8c7986b52329",
+                            ConcurrencyStamp = "5278cffe-43b1-4c5b-b990-49a4770b2f89",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "dinhdiemdlx@gmail.com",
                             EmailConfirmed = true,
@@ -167,7 +170,7 @@ namespace Ecommerce.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "dinhdiemdlx@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFVowuJKwhlb6FV/OMlLE3/UXq0Fvz6SpTzgE5LmD4GfV/KUQlNc/zyQjU697O24Nw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKGc2uGsECpR9n6W6h5TYfmMfVs81/5TbGBYCZc4IvgRzRc+nzz88+XX6Zw+ZACEhQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -433,7 +436,7 @@ namespace Ecommerce.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2023, 7, 7, 10, 15, 49, 377, DateTimeKind.Local).AddTicks(2431),
+                            DateCreated = new DateTime(2023, 7, 6, 17, 3, 51, 355, DateTimeKind.Local).AddTicks(7711),
                             Description = "Áo sơ mi nam trắng Việt Tiến",
                             Details = "Áo sơ mi nam trắng Việt Tiến",
                             Name = "Áo sơ mi nam trắng Việt Tiến",

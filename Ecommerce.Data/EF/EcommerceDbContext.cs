@@ -35,6 +35,7 @@ namespace Ecommerce.Data.EF
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
 
             //modelBuilder.ApplyConfiguration(new LanguageConfiguration());
             //modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
@@ -71,6 +72,7 @@ namespace Ecommerce.Data.EF
 
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
 
         // table Translations
         //public DbSet<Language> Languages { get; set; }

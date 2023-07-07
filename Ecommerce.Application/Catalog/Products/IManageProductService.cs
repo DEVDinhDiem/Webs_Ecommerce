@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ecommerce.Application.Catalog.Dtos;
-using Ecommerce.Application.Catalog.Products.Dtos.Manage;
+using Ecommerce.ViewModels.Catalog.Products;
+using Ecommerce.ViewModels.Catalog.Products.Common;
+using Ecommerce.ViewModels.Catalog.Products.Manage;
+using Microsoft.AspNetCore.Http;
 
 namespace Ecommerce.Application.Catalog.Products
 {
@@ -23,5 +25,13 @@ namespace Ecommerce.Application.Catalog.Products
         Task AddViewcount(int productId);
 
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request);
+
+        Task<int> AddImages(int productId, List<IFormFile> files);
+
+        Task<int> RemoveImages(int imageId);
+
+        Task<int> UpdateImage(int imageId, string caption, bool isDefault);
+
+        Task<List<ProductImageViewModel>> GetListImage(int productId);
     }
 }

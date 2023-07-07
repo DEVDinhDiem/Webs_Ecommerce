@@ -4,8 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
-namespace Ecommerce.Application.Catalog.Products.Dtos.Manage
+namespace Ecommerce.ViewModels.Catalog.Products.Manage
 {
     public class ProductCreateRequest
     {
@@ -26,6 +27,6 @@ namespace Ecommerce.Application.Catalog.Products.Dtos.Manage
 
         //public bool? IsFeatured { get; set; }
 
-        //public IFormFile ThumbnailImage { get; set; }
+        public IFormFile ThumbnailImage { get; set; }
     }
 }
