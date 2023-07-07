@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Application.Catalog.Products
+namespace Ecommerce.ViewModels.Catalog.Products
 {
     public class ProductViewModel
     {

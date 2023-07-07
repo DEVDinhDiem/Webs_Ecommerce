@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Ecommerce.Data\Ecommerce.Data.csproj" />
+    <ProjectReference Include="..\Ecommerce.ViewModels\Ecommerce.ViewModels.csproj" />
     <ProjectReference Include="..\Webs_Ecommerce.Utilities\Ecommerce.Utilities.csproj" />
   </ItemGroup>
 
