@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ecommerce.Data.EF;
+using Ecommerce.ViewModels.Catalog.Common;
 using Ecommerce.ViewModels.Catalog.Products;
-using Ecommerce.ViewModels.Catalog.Products.Common;
-using Ecommerce.ViewModels.Catalog.Products.Public;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Application.Catalog.Products

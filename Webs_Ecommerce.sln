@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Data", "Ecommerce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Application", "Ecommerce.Application\Ecommerce.Application.csproj", "{D90CAA69-9871-4020-8720-288A31825CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Utilities", "Webs_Ecommerce.Utilities\Ecommerce.Utilities.csproj", "{44A30F48-2AEB-4B3C-B521-E3C7C2CF009B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Utilities", "Webs_Ecommerce.Utilities\Ecommerce.Utilities.csproj", "{44A30F48-2AEB-4B3C-B521-E3C7C2CF009B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.ViewModels", "Ecommerce.ViewModels\Ecommerce.ViewModels.csproj", "{2A73F44F-04B0-4756-9607-F2C368DCFE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.ViewModels", "Ecommerce.ViewModels\Ecommerce.ViewModels.csproj", "{2A73F44F-04B0-4756-9607-F2C368DCFE87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.BackendApi", "Ecommerce.BackendApi\Ecommerce.BackendApi.csproj", "{5DDD3BD1-7027-40C0-8413-D404524E79DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2A73F44F-04B0-4756-9607-F2C368DCFE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A73F44F-04B0-4756-9607-F2C368DCFE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A73F44F-04B0-4756-9607-F2C368DCFE87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DDD3BD1-7027-40C0-8413-D404524E79DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DDD3BD1-7027-40C0-8413-D404524E79DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DDD3BD1-7027-40C0-8413-D404524E79DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DDD3BD1-7027-40C0-8413-D404524E79DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

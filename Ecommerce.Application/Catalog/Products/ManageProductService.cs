@@ -9,9 +9,8 @@ using Ecommerce.Application.Common;
 using Ecommerce.Data.EF;
 using Ecommerce.Data.Entities;
 using Ecommerce.Utilities.Exceptions;
+using Ecommerce.ViewModels.Catalog.Common;
 using Ecommerce.ViewModels.Catalog.Products;
-using Ecommerce.ViewModels.Catalog.Products.Common;
-using Ecommerce.ViewModels.Catalog.Products.Manage;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
@@ -93,7 +92,7 @@ namespace Ecommerce.Application.Catalog.Products
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<PagedResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request)
+        public async Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request)
         {
             //1. Select join
             var query = from p in _context.Products
