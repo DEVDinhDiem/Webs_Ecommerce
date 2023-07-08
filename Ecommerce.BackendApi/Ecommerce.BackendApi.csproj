@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Webs_Ecommerce.Utilities\Ecommerce.Utilities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\user-content\" />
+  </ItemGroup>
+
 </Project>

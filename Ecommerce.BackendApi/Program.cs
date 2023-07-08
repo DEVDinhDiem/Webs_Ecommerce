@@ -3,6 +3,7 @@ using Ecommerce.Data.EF;
 using Ecommerce.Utilities.Constants;
 using Ecommerce.Application.Catalog.Products;
 using Microsoft.OpenApi.Models;
+using Ecommerce.Application.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddDbContext<EcommerceDbContext>(option =>
 
 //Declare DI
 builder.Services.AddTransient<IPublicProductService, PublicProductService>();
+builder.Services.AddTransient<IManageProductService, ManageProductService>();
+builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger Ecommerce Solution", Version = "v1" });
