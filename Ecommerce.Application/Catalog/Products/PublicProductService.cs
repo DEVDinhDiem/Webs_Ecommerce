@@ -17,34 +17,34 @@ namespace Ecommerce.Application.Catalog.Products
         {
             _context = context;
         }
-        public async Task<List<ProductViewModel>> GetAll()
-        {
-            var query = from p in _context.Products
-                            //join pt in _context.ProductTranslations on p.Id equals pt.ProductId
-                        join pic in _context.ProductInCategories on p.Id equals pic.ProductId
-                        join c in _context.Categories on pic.CategoryId equals c.Id
-                        //select new { p, pt, pic };
-                        select new { p, pic };
+        //public async Task<List<ProductViewModel>> GetAll()
+        //{
+        //    var query = from p in _context.Products
+        //                    //join pt in _context.ProductTranslations on p.Id equals pt.ProductId
+        //                join pic in _context.ProductInCategories on p.Id equals pic.ProductId
+        //                join c in _context.Categories on pic.CategoryId equals c.Id
+        //                //select new { p, pt, pic };
+        //                select new { p, pic };
 
-            var data = await query.Select(x => new ProductViewModel()
-            {
-                Id = x.p.Id,
-                Name = x.p.Name,
-                DateCreated = x.p.DateCreated,
-                Description = x.p.Description,
-                Details = x.p.Details,
-                //LanguageId = x.pt.LanguageId,
-                OriginalPrice = x.p.OriginalPrice,
-                Price = x.p.Price,
-                SeoAlias = x.p.SeoAlias,
-                SeoDescription = x.p.SeoDescription,
-                SeoTitle = x.p.SeoTitle,
-                Stock = x.p.Stock,
-                ViewCount = x.p.ViewCount
-            }).ToListAsync();
-            return data;
+        //    var data = await query.Select(x => new ProductViewModel()
+        //    {
+        //        Id = x.p.Id,
+        //        Name = x.p.Name,
+        //        DateCreated = x.p.DateCreated,
+        //        Description = x.p.Description,
+        //        Details = x.p.Details,
+        //        //LanguageId = x.pt.LanguageId,
+        //        OriginalPrice = x.p.OriginalPrice,
+        //        Price = x.p.Price,
+        //        SeoAlias = x.p.SeoAlias,
+        //        SeoDescription = x.p.SeoDescription,
+        //        SeoTitle = x.p.SeoTitle,
+        //        Stock = x.p.Stock,
+        //        ViewCount = x.p.ViewCount
+        //    }).ToListAsync();
+        //    return data;
 
-        }
+        //}
 
         public async Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request)
         {
