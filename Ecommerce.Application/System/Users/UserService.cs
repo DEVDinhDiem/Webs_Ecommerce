@@ -30,7 +30,7 @@ namespace Ecommerce.Application.System.Users
             var user = await _userManager.FindByNameAsync(request.UserName);
             if (user == null) return null;
 
-            var result = await _signInManager.PasswordSignInAsync(user, request.Passwrod, request.RememberMe, true);
+            var result = await _signInManager.PasswordSignInAsync(user, request.Password, request.RememberMe, true);
             if (!result.Succeeded)
             {
                 return null;
