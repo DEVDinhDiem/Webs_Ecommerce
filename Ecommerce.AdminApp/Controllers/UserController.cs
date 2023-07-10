@@ -1,16 +1,17 @@
-﻿using Ecommerce.ViewModels.System.Users;
+﻿using Ecommerce.AdminApp.Services;
+using Ecommerce.ViewModels.System.Users;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.AdminApp.Controllers
 {
     public class UserController : Controller
     {
-        //private readonly IUserApiClient _userApiClient;
+        private readonly IUserApiClient _userApiClient;
 
-        //public UserController(IUserApiClient userApiClient)
-        //{
-        //    _userApiClient = userApiClient;
-        //}
+        public UserController(IUserApiClient userApiClient)
+        {
+            _userApiClient = userApiClient;
+        }
 
         public IActionResult Index()
         {
@@ -29,8 +30,7 @@ namespace Ecommerce.AdminApp.Controllers
             if (!ModelState.IsValid)
                 return View(ModelState);
 
-            //var token = await _userApiClient.Authenticate(request);
-            var token = Ok();
+            var token = await _userApiClient.Authenticate(request);
 
             return View(token);
         }
