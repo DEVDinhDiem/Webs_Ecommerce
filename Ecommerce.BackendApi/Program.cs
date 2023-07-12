@@ -19,7 +19,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
 builder.Services.AddDbContext<EcommerceDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString(SystemConstants.MainConnectionString));
