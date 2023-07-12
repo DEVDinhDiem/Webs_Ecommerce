@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics;
 using Ecommerce.AdminApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.AdminApp.Controllers
 {
-    public class HomeController : Controller
+	[Authorize]
+	public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -15,8 +17,9 @@ namespace Ecommerce.AdminApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
+			var user = User.Identity.Name;
+			return View();
+		}
 
         public IActionResult Privacy()
         {

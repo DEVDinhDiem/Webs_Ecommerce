@@ -2,6 +2,7 @@ using Ecommerce.AdminApp.ApiIntegration;
 using Ecommerce.AdminApp.Services;
 using Ecommerce.ViewModels.System.Users;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,19 +10,24 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient();
 
-//builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 builder.Services.AddControllersWithViews()
 		 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
-
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+				.AddCookie(options =>
+				{
+					options.LoginPath = "/User/Login/";
+					options.AccessDeniedPath = "/User/Forbidden/";
+				});
 builder.Services.AddTransient<Ecommerce.AdminApp.Services.IUserApiClient, UserApiClient>();
-var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-#if DEBUG
-if (environment == Environments.Development)
-{
-	builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-}
-#endif
+//var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+//#if DEBUG
+//if (environment == Environments.Development)
+//{
+//	builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+//}
+//#endif
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,7 +37,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UseAuthentication();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
