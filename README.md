@@ -1,14 +1,7 @@
 # ASP.NET Core 6 API
 
 ASP.NET Core 6 API là một dự án mẫu để xây dựng các ứng dụng web API sử dụng ASP.NET Core 6, một framework web mã nguồn mở và hiện đại của Microsoft. ASP.NET Core 6 API cho phép bạn tạo các API RESTful mạnh mẽ, bảo mật và hiệu năng cao với các tính năng như:
-- Routing
-- Model binding và validation
-- Authentication và authorization
-- Logging và exception handling
-- Testing và documentation
-- Middleware và filters
-- Configuration và options
-- Entity Framework Core 6, một ORM mã nguồn mở để truy cập và thao tác với các cơ sở dữ liệu quan hệ
+
 
 ## Cài đặt
 
