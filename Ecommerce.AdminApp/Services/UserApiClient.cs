@@ -1,7 +1,9 @@
 ﻿using Ecommerce.AdminApp.ApiIntegration;
+using Ecommerce.ViewModels.Catalog.Common;
 using Ecommerce.ViewModels.System.Users;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 using System.Security.Policy;
 using System.Text;
 
@@ -9,11 +11,14 @@ namespace Ecommerce.AdminApp.Services
 {
 	public class UserApiClient : IUserApiClient
 	{
+		private readonly IConfiguration _configuration;
+
 		private readonly IHttpClientFactory _httpClientFactory;
 
-		public UserApiClient(IHttpClientFactory httpClientFactory)
+		public UserApiClient(IHttpClientFactory httpClientFactory, IConfiguration configuration)
 		{
 			_httpClientFactory = httpClientFactory;
+			_configuration = configuration;
 		}
 		public async Task<string> Authenticate(LoginRequest request)
 		{
@@ -45,6 +50,18 @@ namespace Ecommerce.AdminApp.Services
 			//string token = tokenDictionary["access_token"];
 
 			return token;
+		}
+
+		public async Task<PagedResult<UserVm>> GetUsersPagings(GetUserPagingRequest request)
+		{
+			var client = _httpClientFactory.CreateClient();
+			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.BearerToken);
+			var response = await client.GetAsync($"/api/users/paging?pageIndex=" +
+				$"{request.PageIndex}&pageSize={request.PageSize}&keyword={request.Keyword}");
+			var body = await response.Content.ReadAsStringAsync();
+			var users = JsonConvert.DeserializeObject<PagedResult<UserVm>>(body);
+			return users;
 		}
 	}
 }

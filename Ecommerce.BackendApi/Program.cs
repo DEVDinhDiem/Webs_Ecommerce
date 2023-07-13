@@ -31,8 +31,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 //Declare DI
-builder.Services.AddTransient<IPublicProductService, PublicProductService>();
-builder.Services.AddTransient<IManageProductService, ManageProductService>();
+builder.Services.AddTransient<ProductService, ProductService>();
 builder.Services.AddTransient<IStorageService, FileStorageService>();
 
 builder.Services.AddTransient<UserManager<AppUser>>();

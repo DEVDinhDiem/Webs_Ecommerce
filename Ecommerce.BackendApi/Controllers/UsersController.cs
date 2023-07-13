@@ -32,19 +32,28 @@ namespace Ecommerce.BackendApi.Controllers
             return Ok(resultToken );
         }
 
-        [HttpPost("register")]
-        [AllowAnonymous]
-        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+		[HttpPost]
+		[AllowAnonymous]
+		public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(ModelState);
 
-            var result = await _userService.Register(request);
-            if (!result)
-            {
-                return BadRequest("Register is unsuccessful.");
-            }
-            return Ok();
-        }
-    }
+			var result = await _userService.Register(request);
+			if (!result)
+			{
+				return BadRequest("Register is unsuccessful.");
+			}
+			return Ok();
+		}
+
+		//http://localhost/api/users/paging?pageIndex=1&pageSize=10&keyword=
+		[HttpGet("paging")]
+		public async Task<IActionResult> GetAllPaging([FromQuery] GetUserPagingRequest request)
+		{
+			var Users = await _userService.GetUsersPaging(request);
+			return Ok(Users);
+		}
+
+	}
 }
