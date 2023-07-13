@@ -1,4 +1,5 @@
-﻿using Ecommerce.ViewModels.System.Users;
+﻿using Ecommerce.ViewModels.Catalog.Common;
+using Ecommerce.ViewModels.System.Users;
 
 namespace Ecommerce.Application.System.Users
 {
@@ -7,5 +8,6 @@ namespace Ecommerce.Application.System.Users
         Task<string> Authencate(LoginRequest request);
 
         Task<bool> Register(RegisterRequest request);
-    }
+		Task<PagedResult<UserVm>> GetUsersPaging(GetUserPagingRequest request);
+	}
 }

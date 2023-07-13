@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.ViewModels.Catalog.Common
 {
-    public class PagingRequestBase
+    public class PagingRequestBase: RequestBase
     {
         public int PageIndex { get; set; }
 
