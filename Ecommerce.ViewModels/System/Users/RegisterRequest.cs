@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace Ecommerce.ViewModels.System.Users
 
         public string LastName { get; set; }
 
-        public DateTime Dob { get; set; }
+		[DataType(DataType.Date)]
+		public DateTime Dob { get; set; }
 
         public string Email { get; set; }
 
@@ -20,8 +22,10 @@ namespace Ecommerce.ViewModels.System.Users
 
         public string UserName { get; set; }
 
-        public string Password { get; set; }
+		[DataType(DataType.Password)]
+		public string Password { get; set; }
 
-        public string ConfirmPassword { get; set; }
+		[DataType(DataType.Password)]
+		public string ConfirmPassword { get; set; }
     }
 }

@@ -52,7 +52,7 @@ namespace Ecommerce.AdminApp.Services
 			return token;
 		}
 
-		public async Task<PagedResult<UserVm>> GetUsersPagings(GetUserPagingRequest request)
+		public async Task<PagedResult<UserVm>> GetUsersPaging(GetUserPagingRequest request)
 		{
 			var client = _httpClientFactory.CreateClient();
 			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
@@ -63,5 +63,17 @@ namespace Ecommerce.AdminApp.Services
 			var users = JsonConvert.DeserializeObject<PagedResult<UserVm>>(body);
 			return users;
 		}
-	}
+
+        public async Task<bool> RegisterUser(RegisterRequest registerRequest)
+        {
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+
+            var json = JsonConvert.SerializeObject(registerRequest);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync("/api/users", httpContent);
+            return response.IsSuccessStatusCode;
+        }
+    }
 }

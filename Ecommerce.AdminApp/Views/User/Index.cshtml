@@ -5,9 +5,9 @@
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
+<p>
+    <a class="btn btn-success" asp-action="Create" asp-controller="User">Create New</a>
+</p>
 @*<table class="table">
     <thead>
         <tr>
@@ -67,7 +67,7 @@
 <div class="container-fluid">
 
 	<!-- Page Heading -->
-	<h1 class="h3 mb-2 text-gray-800">Tables Users</h1>
+	<h1 class="h3 mb-2 text-gray-800">Table Users</h1>
 	@*<p class="mb-4">
 	DataTables is a third party plugin that is used to generate the demo table below.
 	For more information about DataTables, please visit the <a target="_blank"
@@ -92,16 +92,7 @@
 							<th>Mode</th>
 						</tr>
 					</thead>
-					<tfoot>
-						<tr>
-							<th>FirstName</th>
-							<th>LastName</th>
-							<th>PhoneNumber</th>
-							<th>UserName</th>
-							<th>Email</th>
-							<th>Mode</th>
-						</tr>
-					</tfoot>
+					
 					<tbody>
                         @foreach (var item in Model.Items)
                         {

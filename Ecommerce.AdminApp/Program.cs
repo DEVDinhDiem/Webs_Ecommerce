@@ -20,7 +20,7 @@ builder.Services.AddControllersWithViews()
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 				.AddCookie(options =>
 				{
-					options.LoginPath = "/User/Login/";
+					options.LoginPath = "/Login/Index/";
 					options.AccessDeniedPath = "/User/Forbidden/";
 				});
 builder.Services.AddTransient<Ecommerce.AdminApp.Services.IUserApiClient, UserApiClient>();
