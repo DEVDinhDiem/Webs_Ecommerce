@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ecommerce.ViewModels.Catalog.Common
+﻿namespace Ecommerce.ViewModels.Catalog.Common
 {
-    public class PagingRequestBase: RequestBase
+	public class PagingRequestBase
     {
         public int PageIndex { get; set; }
 

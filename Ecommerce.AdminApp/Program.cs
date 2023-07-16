@@ -1,4 +1,3 @@
-using Ecommerce.AdminApp.ApiIntegration;
 using Ecommerce.AdminApp.Services;
 using Ecommerce.ViewModels.System.Users;
 using FluentValidation.AspNetCore;
@@ -15,6 +14,7 @@ builder.Services.AddSession(options =>
 {
 	options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddControllersWithViews()
 		 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
